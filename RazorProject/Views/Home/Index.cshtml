@@ -1,0 +1,88 @@
+﻿@model IEnumerable<RazorProject.Entities.Player>
+
+@{
+    Layout = null;
+    string title = "Our Razor Introduction";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Score)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@try
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        @if (item.Score >= 80)
+                        {
+
+                            <td style="color:springgreen;font-size:3em;">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="color:darkred;font-size:3em;">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                        }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Score)
+                        </td>
+                    </tr>
+                }
+            }
+
+            catch (Exception ex)
+            {
+                <h1 style="color:red;">There is no data</h1>
+            }*@
+        </tbody>
+    </table>
+    <h3>My mail : @title@@gmail.com </h3>
+    <h3>My mail :@@gmail.com </h3>
+    <p>@DateTime.Now</p>
+
+    @{var date = DateTime.Now - TimeSpan.FromDays(3);}
+
+    <p>3 days ago @date</p>
+    @*@for (int i = 0; i < Model.Count(); i++)
+    {
+        <h1>@i</h1>
+    }*@
+
+
+
+
+
+ 
+</body>
+</html>
